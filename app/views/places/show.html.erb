@@ -1,0 +1,12 @@
+<header><h1 class="display-4"><%= @place.title %></h1></header>
+
+<p>Address: <%= @place.address %></p>
+<p>Coordinates: <%= @place.latitude %> <%= @place.longitude %></p>
+
+ <a href="<%= "http://maps.googleapis.com/maps/api/staticmap?center=#{@place.latitude},#{@place.longitude}&markers=#{@place.latitude},#{@place.longitude}&zoom=12&size=640x400&key=AIzaSyDT8eReskwHNjCy-MyQkq77Q6882t3auwc"%>">Map</a>
+ 
+
+
+
+ 
+   			

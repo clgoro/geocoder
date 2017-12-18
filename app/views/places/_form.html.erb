@@ -1,0 +1,76 @@
+<style>
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  #map {
+    height: 50%;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 50;
+    padding: 0;
+  }
+</style>
+<div class="container-fluid">
+  
+
+<%= form_for @place do |f| %>
+  <fieldset class="form-group">
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :visited_by, "Visited_by" %>
+    <%= f.text_field :visited_by, class: "form-control" %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :address, 'Address' %>
+    <%= f.text_field :address, class: "form-control" %>
+  </fieldset>
+
+  <h4>Enter either address or coordinates</h4>
+  
+ <fieldset class="form-group">
+
+  <div class="form-group row">
+    <div class="col-sm-1">
+      <%= f.label :latitude, "Latitude" %>
+    </div>
+
+    <div class="col-sm-3">
+      <%= f.text_field :latitude, class: "form-control" %>
+    </div>
+
+    <div class="col-sm-1">
+      <%= f.label :longitude, "Longitude" %>
+    </div>
+
+    <div class="col-sm-3">
+      <%= f.text_field :longitude, class: "form-control" %>
+    </div>
+  </div>
+
+  <%= f.submit 'Add!', class: 'btn btn-primary' %>
+
+  <div class="card">
+  <div class="card-block">
+    <div id="map" height="460px" width="100%"></div>
+  </div>
+</div>
+
+
+</div>
+    <script src="../../assets/javascripts/test.js">
+
+    </script>
+    <div class="col-sm-3">
+  <%= f.text_field :longitude, class: "form-control" %>
+</div>
+
+<div class="col-sm-4">
+  <a href="#" id="find-on-map" class="btn btn-info btn-sm">Find on the map</a>
+</div>
+
+<% end %>

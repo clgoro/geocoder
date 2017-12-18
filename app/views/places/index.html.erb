@@ -1,0 +1,41 @@
+
+<body>
+    <div id="map" height="460px" width="100%"></div>
+<header><h1 class="display-4">Places</h1></header>
+
+<style>
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  #map {
+    height: 50%;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 50;
+    padding: 0;
+  }
+</style>
+
+<%= link_to 'Add place', new_place_path, class: 'btn btn-primary btn-lg' %>
+	
+ 
+
+<div class="card">
+  <div class="card-block">
+    <ul>
+      <%= render @places %>
+    </ul>
+  </div>
+</div>
+    <div id="form">
+     
+    </div>
+ <%= link_to 'Distance', new_distance_path, class: 'btn btn-primary btn-lg' %>
+      
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQSBGiuyzmM27eQyuQVvpZNvlzaSo54L8&callback=initMap">
+    </script>
+    <script src="../../assets/javascripts/test.js">
+    </script>
+  </body>
